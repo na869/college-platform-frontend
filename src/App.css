@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f2f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.register-bg {
+  background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.App-link {
-  color: #61dafb;
+.form-control, .form-select {
+  border-radius: 12px;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-@keyframes App-logo-spin {
+.form-control:focus, .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0056b3, #0096cc);
+}
+
+.animate-form {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For alert animations (optional) */
+.animate__animated.animate__shakeX {
+  animation: shakeX 0.5s;
+}
+
+@keyframes shakeX {
+  from, to {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
   }
 }
